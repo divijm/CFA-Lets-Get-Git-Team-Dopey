@@ -14,4 +14,8 @@ class User < ApplicationRecord
 
    has_many :events
 
+   def admin?
+        has_role?(:admin)
+   end
+
 end
