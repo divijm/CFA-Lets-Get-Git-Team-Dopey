@@ -23,12 +23,14 @@
 
 
 <h1>List of questions for this topic</h1>
+<h2><%= @questions.size %> questions!</h2>
 <% @questions.each do |question| %>
   <p><%= question.description %></p>
 <% end %>
 
 
 <h1>List of Events for this topic</h1>
+<h2><%= @events.size %> events!</h2>
 <% @events.each do |event| %>
   <p><%= event.description %></p>
 <% end %>

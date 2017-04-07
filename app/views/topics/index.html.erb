@@ -26,6 +26,12 @@
   </tbody>
 </table>
 
+<%= @questions.each do |question| %>
+
+<%= question.get_upvotes.size %>
+
+<% end %>
+
 <br>
 
 <%= link_to 'New Topic', new_topic_path %>
