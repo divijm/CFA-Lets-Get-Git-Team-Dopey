@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'New question', new_question_path %>
+
 <p>
   <strong>Week:</strong>
   <%= @topic.week %>
@@ -17,3 +19,9 @@
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
+
+
+
+<% @questions.each do |question| %>
+  <p><%= question.description %></p>
+<% end %>
