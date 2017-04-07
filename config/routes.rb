@@ -7,8 +7,8 @@ Rails.application.routes.draw do
           resources :events
           resources :questions do
             member do
-              put "upvote", to: "questions#upvote"
-              put "downvote", to: "questions#downvote"
+              get 'upvote', to: 'questions#upvote'
+              get 'downvote', to: 'questions#downvote'
             end
           end
         end
