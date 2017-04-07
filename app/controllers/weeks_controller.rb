@@ -1,6 +1,6 @@
 class WeeksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_week, only: [:show, :edit, :update, :destroy]
-
   # GET /weeks
   # GET /weeks.json
   def index
@@ -11,6 +11,7 @@ class WeeksController < ApplicationController
   # GET /weeks/1.json
   def show
     @topics = Topic.where("week_id": params[:id])
+    authorize @user
   end
 
   # GET /weeks/new
@@ -28,6 +29,7 @@ class WeeksController < ApplicationController
     @week = Week.new(week_params)
 
     respond_to do |format|
+         authorize @week
       if @week.save
         format.html { redirect_to @week, notice: 'Week was successfully created.' }
         format.json { render :show, status: :created, location: @week }
@@ -41,6 +43,7 @@ class WeeksController < ApplicationController
   # PATCH/PUT /weeks/1
   # PATCH/PUT /weeks/1.json
   def update
+       authorize @week
     respond_to do |format|
       if @week.update(week_params)
         format.html { redirect_to @week, notice: 'Week was successfully updated.' }
