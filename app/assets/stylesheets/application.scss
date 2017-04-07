@@ -23,17 +23,25 @@
 /*Font Family variable*/
 $font-headlines:  'Roboto', sans-serif;
 $font-text: 'Open Sans', sans-serif;
+
 /* User sign in and sign forms. */
 body {
      background-color: #F8F6F2;
      margin: auto 0;
 }
 
+.flex-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+}
+
 .form-login {
-     max-width: 350px;
+     min-width: 350px;
      border-radius: 10px;
      font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
-     padding: 2% 3% 2% 3%;
+     padding: 2% 5% 5% 3%;
      border: 1px solid rgba(0,0,0,0.1);
      box-shadow: 0 20px 30px rgba(0,0,0,0.2);
      background-color: #fff;
@@ -72,3 +80,46 @@ body {
 .btn {
      font-weight: bold;
 }
+
+
+/* Media Queries for different devise sizes */
+// @media only screen and (max-width: 760px){
+// }
+ @media only screen and (max-width: 580px){
+      .form-login {
+            font-size: 12px;
+            padding: 2% 10% 2% 8%;
+      }
+        .form-control {
+             font-size: 12px;
+        }
+
+        .form-login h2 {
+            font-size: 18px;
+        }
+
+        .form-group .checkbox {
+             font-size: 12px;
+        }
+  }
+
+  @media only screen and (max-width: 380px){
+       .form-login {
+            min-width: 250px;
+       }
+       .form-login {
+             font-size: 12px;
+             padding: 2% 10% 2% 8%;
+       }
+         .form-control {
+              font-size: 12px;
+         }
+
+         .form-login h2 {
+             font-size: 18px;
+         }
+
+         .form-group .checkbox {
+              font-size: 12px;
+         }
+   }
