@@ -22,6 +22,24 @@
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
+
+          <% @questions.each do |question| %>
+        <h4><%= link_to question.description, question %><br>
+          Submitted <%= time_ago_in_words(question.created_at) %>
+          by <%= question.user.email %>
+        </h4>
+
+          <%= link_to @upvote, upvote_question_path do %>
+        Upvote
+        <%= question.get_upvotes.size %>
+      <% end %>
+
+      <%= link_to @downvote, downvote_question_path do %>
+        Downvote
+        <%= question.get_downvotes.size %>
+      <% end %>
+
     <% end %>
   </tbody>
 </table>

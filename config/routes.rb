@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  
 
-  
-  
   resources :weeks do
     member do
       resources :topics do
         member do
-          resources :questions
           resources :events
+          resources :questions do
+            member do
+              put "upvote", to: "questions#upvote"
+              put "downvote", to: "questions#downvote"
+            end
+          end
         end
       end
     end
