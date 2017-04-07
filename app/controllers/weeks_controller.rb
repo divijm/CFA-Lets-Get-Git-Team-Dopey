@@ -10,6 +10,7 @@ class WeeksController < ApplicationController
   # GET /weeks/1
   # GET /weeks/1.json
   def show
+    @topics = Topic.where("week_id": params[:id])
   end
 
   # GET /weeks/new

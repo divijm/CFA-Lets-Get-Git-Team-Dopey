@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'New topic', new_topic_path %>
+
 <p>
   <strong>Week number:</strong>
   <%= @week.week_number %>
@@ -12,3 +14,11 @@
 
 <%= link_to 'Edit', edit_week_path(@week) %> |
 <%= link_to 'Back', weeks_path %>
+
+
+<h1>LISTING TOPICS</h1>
+
+<% @topics.each do |topic| %>
+  <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+  <p><%= topic.description %></p>
+<% end %>
