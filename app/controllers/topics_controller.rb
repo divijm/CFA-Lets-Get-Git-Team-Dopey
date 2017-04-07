@@ -27,6 +27,7 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
+    @topic.week_id = params[:id]
 
     respond_to do |format|
       if @topic.save
