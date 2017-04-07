@@ -1,7 +1,6 @@
 class WeeksController < ApplicationController
-before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_week, only: [:show, :edit, :update, :destroy]
-
   # GET /weeks
   # GET /weeks.json
   def index
@@ -12,6 +11,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   # GET /weeks/1.json
   def show
     @topics = Topic.where("week_id": params[:id])
+    authorize @user
   end
 
   # GET /weeks/new
