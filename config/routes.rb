@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  resources :events
+  
 
-  resources :questions
-
-  resources :topics
-  resources :weeks
+  
   
   resources :weeks do
     member do
-      resources :topics
+      resources :topics do
+        member do
+          resources :questions
+          resources :events
+        end
+      end
     end
   end
   devise_for :users

@@ -19,6 +19,6 @@
 <h1>LISTING TOPICS</h1>
 
 <% @topics.each do |topic| %>
-  <h4><%= topic.title %></h4>
+  <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
   <p><%= topic.description %></p>
 <% end %>
