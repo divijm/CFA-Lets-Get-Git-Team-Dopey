@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'New question', new_question_path %>
+<%= link_to 'New Event', new_event_path %>
 
 <p>
   <strong>Week:</strong>
@@ -21,7 +22,13 @@
 <%= link_to 'Back', topics_path %>
 
 
-
+<h1>List of questions for this topic</h1>
 <% @questions.each do |question| %>
   <p><%= question.description %></p>
+<% end %>
+
+
+<h1>List of Events for this topic</h1>
+<% @events.each do |event| %>
+  <p><%= event.description %></p>
 <% end %>

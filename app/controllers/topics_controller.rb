@@ -11,6 +11,7 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
     @questions = Question.where("topic_id": params[:id])
+    @events = Event.where("topic_id": params[:id])
   end
 
   # GET /topics/new
