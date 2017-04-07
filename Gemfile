@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rolify'
+gem 'pundit'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
