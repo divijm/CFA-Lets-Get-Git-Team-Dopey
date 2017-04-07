@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :topics
   resources :weeks
   devise_for :users
