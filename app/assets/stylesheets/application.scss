@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import "footer.scss";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -35,7 +36,7 @@ $jumbotron-backgrond-color: #F1545D;
 $primary-text-color: black;
 $secondary-text-color: white;
 
-/* text color and weight classes*/
+/* text color,weight and alignmentclasses*/
 .text-white {
      color: white;
 }
@@ -55,56 +56,59 @@ body {
      justify-content: center;
 }
 
-.form-login {
-     min-width: 350px;
-     border-radius: 10px;
-     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
-     padding: 2% 5% 5% 3%;
-     border: 1px solid rgba(0,0,0,0.1);
-     box-shadow: 0 20px 30px rgba(0,0,0,0.2);
-     background-color: $secondarry-background-color;
-}
+     .form-login {
+          min-width: 350px;
+          border-radius: 10px;
+          font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+          padding: 2% 5% 5% 3%;
+          border: 1px solid rgba(0,0,0,0.1);
+          box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+          background-color: $secondarry-background-color;
+     }
 
-.form-login h2 {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-align: center;
-    font-family:  $font-headlines;
-    font-size: 22px;
-    color: #202d3b;
-    border-bottom: 1px solid #ededed;
-}
+     .form-login h2 {
+         padding-bottom: 20px;
+         margin-bottom: 20px;
+         font-weight: bold;
+         text-align: center;
+         font-family:  $font-headlines;
+         font-size: 22px;
+         color: #202d3b;
+         border-bottom: 1px solid #ededed;
+     }
+     .form-group .label{
+          margin-left: 2%;
+     }
+     .form-group .checkbox{
+          font-size: 14px;
+          padding-bottom: 3%;
+     }
 
-.form-group .checkbox{
-     font-size: 14px;
-     padding-bottom: 3%;
-}
+     .form-control {
+          margin: 2%;
+     }
 
-.form-control {
-     margin: 2%;
-}
+     .reset-password-link {
+          text-decoration: none;
+          color: #939393;
+     }
 
-.reset-password-link {
-     text-decoration: none;
-     color: #939393;
-}
+          .reset-password-link:hover {
+               text-decoration: none;
+               color: #696969;
+          }
 
-.reset-password-link:hover {
-     text-decoration: none;
-     color: #696969;
-}
-
-.btn {
-     font-weight: bold;
-}
+     .btn {
+          font-weight: bold;
+          margin-left: 2%;
+     }
 
 .reset-password {
-     margin:10% 0 15% 2%;
+     margin:10% 0 25% 2%;
 }
-.center {
-     text-align: center
-}
+/*****************************************/
+
+/* Welcome Jumbotron Design class */
 .jumbotron-welcome {
      margin-top: -5%;
      padding-top: 10%;
@@ -117,8 +121,14 @@ body {
      margin-top: 1%;
      font-size: 16px;
 }
+/*****************************************/
+.cancel-account {
+     margin-top: 3%;
+}
 
-
+.handy-margin-bottom {
+     margin-bottom: 10%;
+}
 
 
 /* Media Queries for different devise sizes */
