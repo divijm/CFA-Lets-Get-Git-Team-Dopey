@@ -25,6 +25,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rolify'
 gem 'acts_as_votable'
+gem "pundit"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

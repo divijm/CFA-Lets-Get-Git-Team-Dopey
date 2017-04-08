@@ -32,6 +32,7 @@ class WeeksController < ApplicationController
   # POST /weeks.json
   def create
     @week = Week.new(week_params)
+    authorize @week
 
     respond_to do |format|
       if @week.save
