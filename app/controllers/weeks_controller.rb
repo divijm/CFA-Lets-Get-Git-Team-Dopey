@@ -1,7 +1,6 @@
 class WeeksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_week, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user, except: [:show, :index]
 
   # GET /weeks
   # GET /weeks.json
@@ -27,6 +26,7 @@ class WeeksController < ApplicationController
 
   # GET /weeks/1/edit
   def edit
+    authorize @week
   end
 
   # POST /weeks
@@ -49,6 +49,7 @@ class WeeksController < ApplicationController
   # PATCH/PUT /weeks/1
   # PATCH/PUT /weeks/1.json
   def update
+    authorize @week
     respond_to do |format|
       if @week.update(week_params)
         format.html { redirect_to @week, notice: 'Week was successfully updated.' }
@@ -63,6 +64,7 @@ class WeeksController < ApplicationController
   # DELETE /weeks/1
   # DELETE /weeks/1.json
   def destroy
+    authorize @week
     @week.destroy
     respond_to do |format|
       format.html { redirect_to weeks_url, notice: 'Week was successfully destroyed.' }
