@@ -1,6 +1,7 @@
 class WeeksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_week, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, except: [:show, :index]
 
   # GET /weeks
   # GET /weeks.json
@@ -78,5 +79,9 @@ class WeeksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def week_params
       params.require(:week).permit(:week_number, :term)
+    end
+
+    def authorize_user
+      authorize @week
     end
 end
