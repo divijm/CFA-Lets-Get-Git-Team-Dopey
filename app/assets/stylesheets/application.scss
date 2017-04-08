@@ -19,14 +19,33 @@
 /*Google Font family  */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Nobile');
 
 /*Font Family variable*/
 $font-headlines:  'Roboto', sans-serif;
 $font-text: 'Open Sans', sans-serif;
+$font-jumbotron-headline: 'Nobile', sans-serif;
 
+/*background colors */
+$primary-background-color: #F8F6F2;
+$secondarry-background-color: #fff;
+$jumbotron-backgrond-color: #F1545D;
+
+/*text-color*/
+$primary-text-color: black;
+$secondary-text-color: white;
+
+/* text color and weight classes*/
+.text-white {
+     color: white;
+}
+
+.text-bold {
+     font-weight: bold;
+}
 /* User sign in and sign forms. */
 body {
-     background-color: #F8F6F2;
+     background-color: $primary-background-color;
      margin: auto 0;
 }
 
@@ -34,7 +53,6 @@ body {
      display: flex;
      align-items: center;
      justify-content: center;
-     height: 100vh;
 }
 
 .form-login {
@@ -44,7 +62,7 @@ body {
      padding: 2% 5% 5% 3%;
      border: 1px solid rgba(0,0,0,0.1);
      box-shadow: 0 20px 30px rgba(0,0,0,0.2);
-     background-color: #fff;
+     background-color: $secondarry-background-color;
 }
 
 .form-login h2 {
@@ -58,9 +76,9 @@ body {
     border-bottom: 1px solid #ededed;
 }
 
-.form-group .checkbox {
+.form-group .checkbox{
      font-size: 14px;
-     margin: 3%;
+     padding-bottom: 3%;
 }
 
 .form-control {
@@ -81,6 +99,27 @@ body {
      font-weight: bold;
 }
 
+.reset-password {
+     margin:10% 0 15% 2%;
+}
+.center {
+     text-align: center
+}
+.jumbotron-welcome {
+     margin-top: -5%;
+     padding-top: 10%;
+     padding-bottom: 10%;
+     background-color: $jumbotron-backgrond-color;
+     font-family: $font-jumbotron-headline;
+}
+
+.jumbotron-welcome p {
+     margin-top: 1%;
+     font-size: 16px;
+}
+
+
+
 
 /* Media Queries for different devise sizes */
 // @media only screen and (max-width: 760px){
@@ -100,6 +139,10 @@ body {
 
         .form-group .checkbox {
              font-size: 12px;
+        }
+
+        .jumbotron-welcome {
+             margin-top: -7%;
         }
   }
 
