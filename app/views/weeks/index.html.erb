@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Weeks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Week number</th>
-      <th>Term</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-block">
     <% @weeks.each do |week| %>
-      <tr>
-        <td><%= week.week_number %></td>
-        <td><%= week.term %></td>
-        <td><%= link_to 'Show', week %></td>
-        <td><%= link_to 'Edit', edit_week_path(week) %></td>
-        <td><%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <h4 class="card-title">This Week's Content</h4>
+    <p class="card-text">Term: <%= week.term %> - Week: <%= week.week_number %> </p>
+  </div>
+
+  <div>
+    <%= link_to('Show', week, class: 'btn btn-primary') %>
+    <%= link_to 'Edit', edit_week_path(week), class: 'btn btn-primary' %>
+    <%= link_to 'Destroy', week, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Week', new_week_path %>
+<%= link_to 'Create New Week', new_week_path, class: 'btn btn-primary' %>
+
+<br>
