@@ -1,21 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<div class="card">
-  <div class="card-header">
-  </div>
-  <div class="card-block">
-    <% @weeks.each do |week| %>
-    <h4 class="card-title">This Week's Content</h4>
-    <p class="card-text">Term: <%= week.term %> - Week: <%= week.week_number %> </p>
-  </div>
-
-  <div>
-    <%= link_to('Show', week, class: 'btn btn-primary') %>
-    <%= link_to 'Edit', edit_week_path(week), class: 'btn btn-primary' %>
-    <%= link_to 'Destroy', week, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>
+<div class = "jumbotron jumbotron-welcome">
+    <h1 class = "text-center text-white text-bold">Welcome to Dopey!</h1>
+    <p class = "text-center text-white text-bold">Where want you to become
+      really dope-y programmers!</p>
 </div>
+
+<div class="container">
+    <div class="row">
+        <!-- Card Projects -->
+        <div class="col-md-6 col-md-offset-3">
+            <div class="card">
+              <% @weeks.each do |week| %>
+                <div class="card-image">
+                    <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/59/05/f4/5905f4b95a51ad49b9036f097e0cdc05.png">
+                    <span class="card-title">Term <%= week.term %> - Week <%= week.week_number %></span>
+                </div>
+
+                <div class="card-content">
+                    <p>Cards for display in portfolio style material design by Google.</p>
+                </div>
+
+                <div class="card-action">
+                    <%= link_to('Show', week) %>
+                    <%= link_to 'Edit', edit_week_path(week) %>
+                    <%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <br>
 
