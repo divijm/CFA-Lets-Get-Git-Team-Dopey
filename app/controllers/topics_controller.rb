@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
+    redirect_to root_path 
     @topics = Topic.all
   end
 

@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    redirect_to root_path 
     @events = Event.all
   end
 

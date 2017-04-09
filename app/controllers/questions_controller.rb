@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
+    redirect_to root_path 
     @questions = Question.all
   end
 
