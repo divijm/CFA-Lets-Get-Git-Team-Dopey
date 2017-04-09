@@ -6,6 +6,7 @@ class WeeksController < ApplicationController
   # GET /weeks.json
   def index
     @weeks = Week.all
+    @topics = Topic.all
   end
 
   # GET /weeks/1

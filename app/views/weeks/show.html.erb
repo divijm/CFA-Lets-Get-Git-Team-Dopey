@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New topic', new_topic_path %>
+<div class="container">
+    <div class="row">
+        <!-- Card Projects -->
+        <div class="col-md-6 col-md-offset-3">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/59/05/f4/5905f4b95a51ad49b9036f097e0cdc05.png">
+                    <span class="card-title">Term <%= @week.term %> - Week <%= @week.week_number %></span>
+                </div>
 
-<p>
-  <strong>Week number:</strong>
-  <%= @week.week_number %>
-</p>
+                <div class="card-content">
+                  <% @topics.each do |topic| %>
+                    <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+                    <p><%= topic.description %></p>
+                  <% end %>
+                </div>
 
-<p>
-  <strong>Term:</strong>
-  <%= @week.term %>
-</p>
-
-<%= link_to 'Edit', edit_week_path(@week) %> |
-<%= link_to 'Back', weeks_path %>
-
-
-<h1>LISTING TOPICS</h1>
-
-<% @topics.each do |topic| %>
-  <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
-  <p><%= topic.description %></p>
-<% end %>
+                <div class="card-action">
+                    <%= link_to 'Edit Week', edit_week_path(@week) %>
+                    <%= link_to 'Back', weeks_path %>
+                    <%= link_to 'New topic', new_topic_path %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

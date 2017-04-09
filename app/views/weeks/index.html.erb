@@ -18,13 +18,18 @@
                 </div>
 
                 <div class="card-content">
-                    <p>Cards for display in portfolio style material design by Google.</p>
+                    <p>The key topic's which you should know for this week are:</p>
+                    <% @topics.each do |topic| %>
+                      <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+                    <% end %>
                 </div>
 
                 <div class="card-action">
-                    <%= link_to('Show', week) %>
+                    <%= link_to 'Show', week %>
                     <%= link_to 'Edit', edit_week_path(week) %>
                     <%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= link_to 'Create New Week', new_week_path %>
+                    <!-- <#%= link_to 'New topic', new_topic_path %> -->
                 </div>
                 <% end %>
             </div>
@@ -32,9 +37,5 @@
     </div>
 </div>
 
-
 <br>
-
-<%= link_to 'Create New Week', new_week_path, class: 'btn btn-primary' %>
-
 <br>
