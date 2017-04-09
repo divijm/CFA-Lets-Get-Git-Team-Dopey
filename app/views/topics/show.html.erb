@@ -1,36 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New question', new_question_path %>
-<%= link_to 'New Event', new_event_path %>
+<div class="container">
+    <div class="row">
+        <!-- Card Projects -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="http://blog.commlabindia.com/wp-content/uploads/2016/05/elearning-for-product-training-questions-infographic.jpg">
+                    <span class="card-title"><%= @topic.title %> Questions</span>
+                </div>
 
-<p>
-  <strong>Week:</strong>
-  <%= @topic.week %>
-</p>
+                <div class="card-content">
+                    <p><%= @topic.description %></p>
+                    <%= link_to 'Edit Topic', edit_topic_path(@topic) %>
+                    <hr>
+                    <h4><%= @questions.size %> questions asked!</h4>
+                    <% @questions.each do |question| %>
+                      <p><%= question.description %></p>
+                    <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
+                </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @topic.description %>
-</p>
+                <div class="card-action">
+                    <%= link_to 'New question', new_question_path %>
+                    <a href="#" target="new_blank">Back</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="http://dev.khuddam.ca/wp-content/uploads/2014/12/ms_crm_icon_1x.png">
+                    <span class="card-title">Events</span>
+                </div>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+                <div class="card-content">
+                    <p>
+                      <h4><%= @events.size %> events!</h4>
+                      <% @events.each do |event| %>
+                        <p><%= event.description %></p>
+                      <% end %>
+                    </p>
+                </div>
 
+                <div class="card-action">
+                    <%= link_to 'New Event', new_event_path %>
+                    <a href="#" target="new_blank">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>List of questions for this topic</h1>
-<h2><%= @questions.size %> questions!</h2>
-<% @questions.each do |question| %>
-  <p><%= question.description %></p>
-<% end %>
-
-
-<h1>List of Events for this topic</h1>
-<h2><%= @events.size %> events!</h2>
-<% @events.each do |event| %>
-  <p><%= event.description %></p>
-<% end %>
+<br>
+<br>

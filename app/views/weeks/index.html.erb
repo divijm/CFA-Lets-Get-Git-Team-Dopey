@@ -21,6 +21,8 @@
                     <p>The key topic's which you should know for this week are:</p>
                     <% @topics.each do |topic| %>
                       <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+                      <h5><%= @questions.size %> questions!</h5>
+                      <h5><%= @events.size %> events!</h5>
                     <% end %>
                 </div>
 
