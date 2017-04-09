@@ -36,10 +36,10 @@
 
                         <br>
 
-                        <p>
+                        <p><em>
                             Submitted <%= time_ago_in_words(question.created_at) %>
                             by <%= question.user.email %>
-                        </p>
+                        </em></p>
 
                         <p>
                             <%= link_to "Upvote", upvote_question_path(question) %>
@@ -79,8 +79,26 @@
                     <p>
                       <h4><%= @events.size %> events!</h4>
                       <% @events.each do |event| %>
+
+                      <br>
+
+                        <h5>
+                            Event: <%= link_to event.title, event %>
+                        </h5>
+
+                        <br>
+
                         <p><%= event.description %></p>
+
+                        <p><em>
+                            Submitted <%= time_ago_in_words(event.created_at) %>
+                            by <%= event.user.email %>
+                        </em></p>
+
+
                       <% end %>
+
+
                     </p>
                 </div>
 
