@@ -1,39 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
+<div class="container">
+     <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+               <div class="card">
+                    <div class="card-image">
+                         <img class="img-responsive" src="http://dev.khuddam.ca/wp-content/uploads/2014/12/ms_crm_icon_1x.png">
+                         <span class="card-title">Event</span>
+                    </div>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @event.topic %>
-</p>
+                    <div class = "card-content">
+                         <p>
+                              <strong>User:</strong>
+                              <%= @event.user.email %>
+                         </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+                         <p>
+                              <strong>Topic:</strong>
+                              <%= @event.topic.title %>
+                         </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+                         <p>
+                              <strong>Title:</strong>
+                              <%= @event.title %>
+                         </p>
 
-<p>
-  <strong>Start Time:</strong>
-  <%= @event.start_time %>
-</p>
+                         <p>
+                              <strong>Description:</strong>
+                              <%= @event.description %>
+                         </p>
 
-<p>
-  <strong>End Time:</strong>
-  <%= @event.end_time %>
-</p>
+                         <p>
+                              <strong>Start Time:</strong>
+                              <%= @event.start_time %>
+                         </p>
 
-<p>
-  <strong>Host:</strong>
-  <%= @event.host %>
-</p>
+                         <p>
+                              <strong>End Time:</strong>
+                              <%= @event.end_time %>
+                         </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+                         <p>
+                              <strong>Host:</strong>
+                              <%= @event.host %>
+                         </p>
+                    </div>
+
+                    <div class = "card-action">
+                         <%= link_to 'Edit', edit_event_path(@event) %> |
+                         <%= link_to 'Back', events_path %>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
