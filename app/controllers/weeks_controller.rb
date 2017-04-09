@@ -1,16 +1,22 @@
 class WeeksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_week, only: [:show, :edit, :update, :destroy]
 
   # GET /weeks
   # GET /weeks.json
   def index
     @weeks = Week.all
+    @topics = Topic.all
+    @questions = Question.where("topic_id": params[:id])
+    @events = Event.where("topic_id": params[:id])
   end
 
   # GET /weeks/1
   # GET /weeks/1.json
   def show
     @topics = Topic.where("week_id": params[:id])
+    @questions = Question.where("topic_id": params[:id])
+    @events = Event.where("topic_id": params[:id])
   end
 
   # GET /weeks/new

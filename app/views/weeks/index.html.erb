@@ -1,29 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Weeks</h1>
+<div class = "jumbotron jumbotron-welcome">
+    <h1 class = "text-center text-white text-bold">Welcome to Dopey!</h1>
+    <p class = "text-center text-white text-bold">Where want you to become
+      really dope-y programmers!</p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Week number</th>
-      <th>Term</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+    <div class="row">
+        <!-- Card Projects -->
+        <div class="col-md-6 col-md-offset-3">
+            <div class="card">
+              <% @weeks.each do |week| %>
+                <div class="card-image">
+                    <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/59/05/f4/5905f4b95a51ad49b9036f097e0cdc05.png">
+                    <span class="card-title">Term <%= week.term %> - Week <%= week.week_number %></span>
+                </div>
 
-  <tbody>
-    <% @weeks.each do |week| %>
-      <tr>
-        <td><%= week.week_number %></td>
-        <td><%= week.term %></td>
-        <td><%= link_to 'Show', week %></td>
-        <td><%= link_to 'Edit', edit_week_path(week) %></td>
-        <td><%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                <div class="card-content">
+                    <p>The key topic's which you should know for this week are:</p>
+                    <% @topics.each do |topic| %>
+                      <h4><%= link_to topic.title, topic_path(topic.id) %></h4>
+                      <h5><%= @questions.size %> questions!</h5>
+                      <h5><%= @events.size %> events!</h5>
+                    <% end %>
+                </div>
+
+                <div class="card-action">
+                    <%= link_to 'Show', week %>
+                    <%= link_to 'Edit', edit_week_path(week) %>
+                    <%= link_to 'Destroy', week, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= link_to 'Create New Week', new_week_path %>
+                    <!-- <#%= link_to 'New topic', new_topic_path %> -->
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
 
 <br>
-
-<%= link_to 'New Week', new_week_path %>
+<br>
