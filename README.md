@@ -50,7 +50,7 @@ We started of by coming up with a solution if there was no technology used. So i
 
 And this is what we came up with this low fidelity wire-frame!
 
-![Imgur](http://i.imgur.com/wbx7fHJ.jpg)
+![Imgur](http://i.imgur.com/wbx7fHJ.jpg?1)
 
 Somewhere where I can see the weekly curriculum so both students who needed assistance or were excelling could keep track of their progress.
 
@@ -64,7 +64,7 @@ So we then added to that by talking about some user stories as a team, and worke
 
 And so we worked up from there and decided to put that working solution (without tech) with some key user stories on some sort of tech based interface.
 
-![Imgur](http://i.imgur.com/AdAezAz.jpg)
+![Imgur](http://i.imgur.com/AdAezAz.jpg?1)
 
 Finally, we worked our way to this medium fidelity which we decided to use to construct our website. But before we decided to code anything, we decided to go through our Entity Relationship Diagram in detail to ensure that we knew how each model was connected to each other!
 
@@ -74,7 +74,7 @@ We were now ready to code! To ensure that we knew exactly what everyone was work
 
 ![Imgur](http://i.imgur.com/YBos8tK.png)
 
-## Screenshots of Project
+## Screenshots of the Project
 
 ![Imgur](http://i.imgur.com/5ZeQX7B.png)
 
