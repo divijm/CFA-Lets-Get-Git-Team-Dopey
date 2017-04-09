@@ -1,6 +1,14 @@
-<h1>Editing Topic</h1>
+<div class="flex-container">
+     <div class=" form-login">
+          <div class="light-well">
+               <h2 class="page-header text-center">Editing Topic</h1>
 
-<%= render 'form', topic: @topic %>
-
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+               <%= render 'form', topic: @topic %>
+               <br>
+               <div class = "back-link">
+                    <%= link_to 'Show', @topic %> |
+                    <%= link_to 'Back', topics_path %>
+               </div>
+          </div>
+     </div>
+</div>

@@ -1,5 +1,14 @@
-<h1>New Question</h1>
+<div class="flex-container">
+     <div class=" form-login">
+          <div class="light-well">
+               <h2 class="page-header text-center">New Question</h1>
 
-<%= render 'form', question: @question %>
+               <%= render 'form', question: @question %>
+               <br>
 
-<%= link_to 'Back', questions_path %>
+               <div class = "back-link">
+                    <%= link_to 'Back', questions_path%>
+               </div>
+          </div>
+     </div>
+</div>

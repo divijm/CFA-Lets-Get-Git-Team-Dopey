@@ -19,13 +19,13 @@ $font-jumbotron-headline: 'Nobile', sans-serif;
 /*background colors */
 $primary-background-color: #F8F6F2;
 $secondarry-background-color: #fff;
-$jumbotron-backgrond-color: #F1545D;
+$jumbotron-backgrond-color: #56a656;
 
 /*text-color*/
 $primary-text-color: black;
 $secondary-text-color: white;
 
-/* text color,weight and alignmentclasses*/
+/* text color,weight and alignment classes*/
 .text-white {
      color: white;
 }
@@ -43,10 +43,12 @@ body {
      display: flex;
      align-items: center;
      justify-content: center;
+     min-height: 450px;
 }
 
      .form-login {
           min-width: 350px;
+          min-height: 350px;
           border-radius: 10px;
           font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
           padding: 2% 5% 5% 3%;
@@ -96,13 +98,26 @@ body {
      margin:10% 0 25% 2%;
 }
 
+// Scaffold forms
+.centered-btn {
+     margin-left: 25%;
+}
+
+.centered-btn-event{
+     margin-left: 37%;
+}
+
+.back-link {
+     margin-bottom: 10%;
+}
+
 /* Welcome Jumbotron Design class */
 
 .jumbotron-welcome {
      margin-top: -5%;
      padding-top: 10%;
      padding-bottom: 10%;
-     background-color: #4DD0E1;
+     background-color: $jumbotron-backgrond-color;
     //  background-image: url("https://i.ytimg.com/vi/IqARzB5A7EI/maxresdefault.jpg");
      font-family: $font-jumbotron-headline;
 }
