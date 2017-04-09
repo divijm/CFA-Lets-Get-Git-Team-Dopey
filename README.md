@@ -14,48 +14,79 @@ We reframed this problem statement slightly by saying
 
 The reason we decided to work on this problem is because "We want to create the best possible experience in becoming a better developer."
 
-And so, with our problem statement, we further identified 3 key issues that seemed to
+And so, with our problem statement, we further identified 3 key issues that seemed to be the reason as to why there were difficulties in accomodating both groups of students.
+
+1. Students can’t keep track of their progress
+
+2. Students find it difficult to ask questions and get them answered
+
+3. Students don’t practice what they have learnt with each other
 
 ## Installation instructions
 
-Thug Lyfe 2000 is written in Ruby and must have it installed (Ruby 2.4 or higher).
+Dopey is written in Ruby and must have it installed (Ruby 2.4 or higher).
 
 1. Clone the repo.
 
-2. Thug Lyfe 2000 uses ```bundler``` to install dependencies.
+2. Dopey uses ```bundler``` to install dependencies.
 ```
 $ gem install bundler
 $ bundler install
+$ rails db:create
+$ rails db:migrate
+$ rails s
 ```
 The ```bundler install``` command must be called in the root directory of the repo.
 
 ## Usage installation
 
-To run the file in terminal: ```$ ruby index.rb```
+To see the Rails application, open up your Chrome/Safari browser and type in: ```http://localhost:3000/```
 
 ## Design Journey/Process
 
-The challenge of designing an engaging and educational game in Terminal excited us all!
+The challenge of designing a solution for this problem excited us all! We took the context of the problem to be our classroom - a bootcamp setting but envisioned for this to have the ability to scale to other bootcamp and classroom settings, and hence a very valuable problem to be working on.
 
-The idea of an anxiety arousing quiz game came to mind with an original theme of vegetables. Players were to choose from an option of vegetables, which vegetable they disliked the most. Players then would be chased by the vegetable, with their only chance to get away dependant on getting the correct answers to a vegetable themed trivia. This was then to be complemented with the use of a timer to add the anxiety and excitement to go with the game.
+We started of by coming up with a solution if there was no technology used. So if we only had pen and paper, what would the solution look like?
 
-To begin the design process, we did quite well to build together a strong list of user stories and developer stories. From this session, we were able to realise that the most important classes which we had to make were ‘Questions’, ‘Players’, ‘Computer’, ‘Animation’ and ‘Picture’. This allowed us to build a skeleton code for our program. So as a team, we split up and began creating the different Classes and debugging the resulting issues.
+And this is what we came up with this low fidelity wire-frame!
 
-![alt tag](https://github.com/Firmanc/CFA-Thug-Lyfe/blob/master/images/classes.png)
+![Imgur](http://i.imgur.com/wbx7fHJ.jpg)
 
-With great progress on the ‘Questions’, ‘Players’ and ‘Computer’ classes - we now had to tackle the other two challenging classes of ‘Animation’ and ‘Picture’. The reason for us wanting to create these classes was so we could make our program more engaging and responsive. Hence we tried using Catpix as one of the gems as it allows you to produce any image available and to reproduce it on the Terminal. With some progress, we did manage to get a ‘carrot vegetable’ to go left to right, which was quite an achievement for the team.
+Somewhere where I can see the weekly curriculum so both students who needed assistance or were excelling could keep track of their progress.
 
-![alt tag](https://github.com/Firmanc/CFA-Thug-Lyfe/blob/master/images/carrot.png)
+Somewhere where I could ask questions based on the topics covered as part of the curriculum.
 
-Soon after we as a team decided against the gem Catpix because of its bug-prone build and how it was very time-consuming and inefficient for us as team. Hence, instead of pictures we decided to use ASCII/unicode based emoticons which are already included in the Ruby library. This made it easier for us to focus on the other issues of the program, like that of making the ‘vegetable’ move right or left depending on a situation. However, after deciding to use unicode emoticons and finding that there weren’t enough vegetables to our liking - we decided against the whole vegetable based game. We still figured out how to move a certain emoticon left or right etc, but now we needed a theme and a storyline to base the game around. It was essentially a pivot which we had to make.
+Somewhere to show that I can help other students because I want to improve my teaching/mentoring skills!
 
-![alt tag](https://github.com/Firmanc/CFA-Thug-Lyfe/blob/master/images/thuglife.png)
+So we then added to that by talking about some user stories as a team, and worked on this on Trello and separated it based on the well-known Donut/Sprinkle formula.
+
+![Imgur](http://i.imgur.com/DI1VoF8.png)
+
+And so we worked up from there and decided to put that working solution (without tech) with some key user stories on some sort of tech based interface.
+
+![Imgur](http://i.imgur.com/AdAezAz.jpg)
+
+Finally, we worked our way to this medium fidelity which we decided to use to construct our website. But before we decided to code anything, we decided to go through our Entity Relationship Diagram in detail to ensure that we knew how each model was connected to each other!
+
+![Imgur](http://i.imgur.com/9h1CxIK.jpg)
+
+We were now ready to code! To ensure that we knew exactly what everyone was working on and how their progress was going - we managed to keep track via Trello and essentially had a Kanban style approach and moved cards along as they progressed.
+
+![Imgur](http://i.imgur.com/YBos8tK.png)
+
+## Screenshots of Project
+
+![Imgur](http://i.imgur.com/5ZeQX7B.png)
+
+![Imgur](http://i.imgur.com/FraFJ12.png)
+
+![Imgur](http://i.imgur.com/FfSS4fe.png)
 
 ## Authors
-Jess Ngo, Firman Cahyandi, Shouhei Yamauchi, Divij Mehra
+Binny Kim, Bandita Sharma, Tiong Shunooi and Divij Mehra
 
 Mentorship and insight was sought from Jamie, Peter and other peer students.
 
 ## Contact Info
 
-Please contact our lawyers should you wish to invest billions onto our program.
+Please contact our lawyers should you wish to invest billions onto our application.
