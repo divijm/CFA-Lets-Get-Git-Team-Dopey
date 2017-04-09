@@ -11,13 +11,54 @@
                 </div>
 
                 <div class="card-content">
-                    <p><%= @topic.description %></p>
-                    <%= link_to 'Edit Topic', edit_topic_path(@topic) %>
+                    <strong>Description: </strong> <%= @topic.description %>
+                    <br>
+                      <%= link_to 'Edit Topic', edit_topic_path(@topic) %>
+
                     <hr>
-                    <h4><%= @questions.size %> questions asked!</h4>
-                    <% @questions.each do |question| %>
-                      <p><%= question.description %></p>
-                    <% end %>
+
+                    <div class="card-action">
+                        <%= link_to 'New question', new_question_path %>
+                    </div>
+
+
+                    <h4>
+                      <%= @questions.size %> questions asked!
+                    </h4>
+
+                    <br>
+
+                        <% @questions.each do |question| %>
+
+                        <h4>
+                            Question: <%= link_to question.description, question %>
+                        </h4>
+
+                        <br>
+
+                        <p>
+                            Submitted <%= time_ago_in_words(question.created_at) %>
+                            by <%= question.user.email %>
+                        </p>
+
+                        <p>
+                            <%= link_to "Upvote", upvote_question_path(question) %>
+                            <%= question.get_upvotes.size %>
+                            |
+                            <%= link_to "Downvote", downvote_question_path(question) %>
+                            <%= question.get_downvotes.size %>
+                            |
+                            <%= link_to 'Show', question %>
+                            |
+                            <%= link_to 'Edit', edit_question_path(question) %>
+                            |
+                            <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+                            |
+                        </p>
+
+                        <br>
+
+                        <% end %>
 
                 </div>
 
