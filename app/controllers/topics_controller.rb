@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
+    redirect_to root_path 
     @topics = Topic.all
   end
 
@@ -21,12 +22,14 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
+    authorize @topic
   end
 
   # POST /topics
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
+    authorize @topic
     @topic.week_id = params[:id]
 
     respond_to do |format|
@@ -43,6 +46,7 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
+    authorize @topic
     respond_to do |format|
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
@@ -57,6 +61,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
+    authorize @topic
     @topic.destroy
     respond_to do |format|
       format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
@@ -74,4 +79,5 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:week_id, :title, :description)
     end
+
 end

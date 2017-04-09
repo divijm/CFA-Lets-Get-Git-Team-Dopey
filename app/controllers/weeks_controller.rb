@@ -26,12 +26,14 @@ class WeeksController < ApplicationController
 
   # GET /weeks/1/edit
   def edit
+    authorize @week
   end
 
   # POST /weeks
   # POST /weeks.json
   def create
     @week = Week.new(week_params)
+    authorize @week
 
     respond_to do |format|
       if @week.save
@@ -47,6 +49,7 @@ class WeeksController < ApplicationController
   # PATCH/PUT /weeks/1
   # PATCH/PUT /weeks/1.json
   def update
+    authorize @week
     respond_to do |format|
       if @week.update(week_params)
         format.html { redirect_to @week, notice: 'Week was successfully updated.' }
@@ -61,6 +64,7 @@ class WeeksController < ApplicationController
   # DELETE /weeks/1
   # DELETE /weeks/1.json
   def destroy
+    authorize @week
     @week.destroy
     respond_to do |format|
       format.html { redirect_to weeks_url, notice: 'Week was successfully destroyed.' }
@@ -77,5 +81,9 @@ class WeeksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def week_params
       params.require(:week).permit(:week_number, :term)
+    end
+
+    def authorize_user
+      authorize @week
     end
 end

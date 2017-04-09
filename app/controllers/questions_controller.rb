@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
+    redirect_to root_path
     @questions = Question.all
   end
 
@@ -19,6 +20,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    authorize @question
   end
 
   # POST /questions
@@ -54,13 +56,14 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    authorize @question
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+        format.json { render jso1n: @question.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -68,6 +71,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
+    authorize @question
     @question.destroy
     respond_to do |format|
       format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
