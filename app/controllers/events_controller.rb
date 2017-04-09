@@ -41,6 +41,18 @@ class EventsController < ApplicationController
     end
   end
 
+  def upvote
+    @event = Event.find(params[:id])
+    @event.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @event = Event.find(params[:id])
+    @event.downvote_by current_user
+    redirect_to :back
+  end
+
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update

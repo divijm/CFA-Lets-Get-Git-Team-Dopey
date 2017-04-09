@@ -7,7 +7,7 @@ class WeeksController < ApplicationController
   def index
     @weeks = Week.all
     @topics = Topic.all
-    @questions = Question.where("topic_id": params[:id])
+    @questions = Question.where(topic_id: params[:id])
     @events = Event.where("topic_id": params[:id])
   end
 

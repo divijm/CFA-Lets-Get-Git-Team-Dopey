@@ -19,3 +19,5 @@ Rails.application.routes.draw do
   root 'weeks#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+# Need to fix routes for events to include the upvote feature! 
