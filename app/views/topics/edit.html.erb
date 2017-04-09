@@ -5,8 +5,10 @@
 
                <%= render 'form', topic: @topic %>
                <br>
-               <%= link_to 'Show', @topic %> |
-               <%= link_to 'Back', topics_path %>
+               <div class = "back-link">
+                    <%= link_to 'Show', @topic %> |
+                    <%= link_to 'Back', topics_path %>
+               </div>
           </div>
      </div>
 </div>
