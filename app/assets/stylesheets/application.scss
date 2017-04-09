@@ -25,7 +25,7 @@ $jumbotron-backgrond-color: #F1545D;
 $primary-text-color: black;
 $secondary-text-color: white;
 
-/* text color,weight and alignmentclasses*/
+/* text color,weight and alignment classes*/
 .text-white {
      color: white;
 }
@@ -43,10 +43,12 @@ body {
      display: flex;
      align-items: center;
      justify-content: center;
+     min-height: 450px;
 }
 
      .form-login {
           min-width: 350px;
+          min-height: 350px;
           border-radius: 10px;
           font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
           padding: 2% 5% 5% 3%;
@@ -94,6 +96,11 @@ body {
 
 .reset-password {
      margin:10% 0 25% 2%;
+}
+
+// Scaffold forms
+.centered-btn {
+     margin-left: 25%;
 }
 
 /* Welcome Jumbotron Design class */

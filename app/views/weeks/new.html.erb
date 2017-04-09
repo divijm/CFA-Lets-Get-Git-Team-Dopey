@@ -1,5 +1,11 @@
-<h1>New Week</h1>
+<div class="flex-container">
+     <div class=" form-login">
+          <div class="light-well">
+               <h2 class="page-header text-center">New Week</h2>
 
-<%= render 'form', week: @week %>
-
-<%= link_to 'Back', weeks_path %>
+               <%= render 'form', week: @week %>
+               <br>
+               <%= link_to 'Back', weeks_path, class: "text-muted" %>
+          </div>
+     </div>
+</div>
